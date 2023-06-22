@@ -1,11 +1,32 @@
 {
   "users": [
+    
     {
-      "name": "nhlamulo",
-      "surname": "mahlabana",
-      "email": "nmahlabana@gmail.com",
-      "phone": "0836110923",
+      "name": "rato",
+      "surname": "manbfh",
+      "email": "3@gmaol",
+      "phone": "068",
+      "position": "hustler",
+      "image": "",
       "id": 1
+    },
+    {
+      "name": "dd",
+      "surname": "dg",
+      "email": "",
+      "phone": "",
+      "position": "",
+      "image": "",
+      "id": 2
+    },
+    {
+      "name": "stg",
+      "surname": "dgdg",
+      "email": "gd@h",
+      "phone": "dg",
+      "position": "",
+      "image": "",
+      "id": 3
     }
   ]
 }

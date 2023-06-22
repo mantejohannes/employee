@@ -3,26 +3,35 @@ import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 
 const EditUser = () => {
+
+ 
+
+
+
     const navigate = useNavigate();
     const { id } = useParams();
     const [user,setUser] = useState({
+
         name: "",
         surname: "",
         email: "",
-        phone: ""
+        phone: "",
+        position: "",
+        image: ""
+     
     });
 
-    const {name, surname,email,phone} = user;
+    const {name, surname,email,phone,position,image} = user;
     const onInputChange = e =>{
      setUser({...user,[e.target.name]:e.target.value});
     }
 
 
-     useEffect(()=>{
+      useEffect(()=>{
         loadUser();
-    },[]);
+     },[]);
 
-//loadUser();
+
 
 
     const onSubmit = async e =>{
@@ -44,6 +53,8 @@ const EditUser = () => {
            <div className='w-75 mx-auto shadow p-5'>
             <h2 className='text-center mb-4'>Edit A User</h2>
             <form onSubmit={e => onSubmit(e)}>
+
+      
 
                <div className='form-group'>
                 <input
@@ -93,6 +104,36 @@ const EditUser = () => {
          />
 
         </div>
+
+        <div className='form-group'>
+          <input
+           type='text'
+           className='form-control form-control-lg'
+           placeholder='Enter Your Employee Position'
+           name='position'
+           value={position}
+           onChange={e => onInputChange(e)}
+
+         />
+
+        </div>
+        
+
+        <div className='form-group'>
+          <input
+           type='file'
+           className='form-control form-control-lg'
+           placeholder='Enter Your Employee Position'
+           name='image'
+           value={image}
+           onChange={e => onInputChange(e)}
+
+         />
+
+        </div>
+
+      
+
 
             <button className="btn btn-warning btn-block">Update User</button>
 

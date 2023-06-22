@@ -4,22 +4,31 @@ import axios from "axios";
 
 const User = () => {
   const [user, setUser] = useState({
+    
+   
     name: "",
     surname: "",
     email: "",
-    phone: ""
-  
+    phone: "",
+    position: "",
+    image: "image"
+   
   });
 
   const { id } = useParams();
   useEffect(() => {
+
     loadUser();
   }, []);
+
+
 
   const loadUser = async () => {
     const res = await axios.get(`http://localhost:3001/users/${id}`);
     setUser(res.data);
   };
+
+  
   return (
     <div className="container py-4">
       <Link className="btn btn-primary" to="/">
@@ -32,6 +41,12 @@ const User = () => {
         <li className="list-group-item">surname: {user.surname}</li>
         <li className="list-group-item">email: {user.email}</li>
         <li className="list-group-item">phone: {user.phone}</li>
+        <li className="list-group-item">position: {user.position}</li>
+        <li className="list-group-item">image: {user.image}</li>
+
+  
+
+
       </ul>
     </div>
   );

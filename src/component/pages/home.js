@@ -1,10 +1,11 @@
 import React, {useState, useEffect} from "react";
 import {Link} from "react-router-dom";
 import axios from "axios";
+import SearchForm from "../users/SearchForm";
+
 
 const Home = ( ) =>{
 
-      
     const [users,setUsers] = useState ([]);
 
     useEffect(()=>{
@@ -17,6 +18,16 @@ const Home = ( ) =>{
         setUsers(result.data);
     };
 
+
+    //
+    const searchEmployeeId = async (searchId) => {
+
+      const result = await axios.get(`http://localhost:3001/users/${searchId}`);
+      setUsers(result.data);
+
+
+    }
+
       const deleteUser = async id =>{
         await axios.delete(`http://localhost:3001/users/${id}`);
         loadUser();
@@ -24,13 +35,28 @@ const Home = ( ) =>{
       }
 
 
+
+
+
+
+
+
     return(
         <div className="container">
+          <br></br>
             <center><h1>Employee Application</h1></center>
             {/*<Link className="btn btn-outline-dark w-25" to="/user/add">Add Users</Link>
             */}
             <br></br>
+              <div className="search-id" align="right">   
+             <h3>Search Employee</h3>
+            <SearchForm onSearch={searchEmployeeId} />
+             </div>
+
+
             <br></br>
+         
+         
             <br></br>
             <br></br>
 
@@ -38,12 +64,15 @@ const Home = ( ) =>{
  
   <thead>
     <tr className="bg-dark text-white">
+     
       <th scope="col">#</th>
       <th scope="col">Name</th>
       <th scope="col">Surname</th>
       <th scope="col">Emails</th>
       <th scope="col">Phone</th>
-      <th scope="col">Act</th>
+      <th scope="col">Position</th>
+      <th scope="col">Image</th>
+      <th scope="col">Take Action</th>
     </tr>
   </thead>
   <tbody>
@@ -55,6 +84,11 @@ const Home = ( ) =>{
                 <td>{user.surname}</td>
                 <td>{user.email}</td>
                 <td>{user.phone}</td>
+                <td>{user.position}</td>
+                <td>{user.image}</td>
+              
+                
+               
 
 
 

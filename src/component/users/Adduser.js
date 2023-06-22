@@ -1,22 +1,37 @@
 import {React,useState} from "react";
 import axios from 'axios'; 
 import { useNavigate } from "react-router-dom";
+import PictureInput from "../pages/PictureInput";
+
 
 
 const Adduser = () =>{
     
+
+
     const navigate = useNavigate();
 
 
     
     const [user,setUser] = useState({
+        
         name:"",
         surname:"",
         email:"",
         phone:"",
+        position:"",
+        image:""
+        
+       
     });
 
-    const {name, surname,email,phone} = user;
+
+
+
+
+    
+
+    const {name, surname,email,phone,position,image} = user;
     const onInputChange = e =>{
      setUser({...user,[e.target.name]:e.target.value});
     }
@@ -31,16 +46,20 @@ const Adduser = () =>{
 
     return(
         <div className="container">
+
+          
            <div className='w-75 mx-auto shadow p-5'>
             <h2 className='text-center mb-4'>Add A User</h2>
             <form onSubmit={e => onSubmit(e)}>
+
+           
 
                <div className='form-group'>
                 <input
                 type='text'
                 className='form-control form-control-lg'
                 placeholder='Enter Your Name'
-                name='name'
+                name='name' 
                 value={name}
                 onChange={e => onInputChange(e)}
                />
@@ -86,6 +105,40 @@ const Adduser = () =>{
          />
 
         </div>
+
+        <br></br>
+
+        <div className='form-group'>
+          <input
+           type='text'
+           className='form-control form-control-lg'
+           placeholder='Enter Your Employee Position'
+           name='position'
+           value={position}
+           onChange={e => onInputChange(e)}
+
+         />
+
+        </div>
+        
+        <br></br>
+
+<div className='form-group'>
+  
+
+ 
+
+</div>
+
+
+        
+        <br></br>
+
+       
+        
+
+
+        
 
             <button className="btn btn-primary btn-black m-4 p-2" align="center">Add User</button>
 

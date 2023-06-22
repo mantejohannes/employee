@@ -8,10 +8,12 @@ import Adduser from "./component/users/Adduser";
 import EditUser from "./component/users/EditUser";
 import User from "./component/users/User";
 
-import Register from "./component/pages/Register";
+import Register from "./component/pages/PictureInput";
 
 function App() {
   return (
+
+    
 
     <Router>
       <div className="App">
@@ -24,7 +26,10 @@ function App() {
             <Route exact path="/contact" Component={Contact}></Route> 
             <Route exact path="/user/add" Component={Adduser}></Route> 
             <Route exact path="/user/edit/:id" Component={EditUser}></Route> 
-            <Route exact path="/user/:id" Component={User}></Route> 
+            <Route exact path="/user/:id" Component={User}></Route>
+
+        
+
 
 
             <Route exact path="/register" Component={Register}></Route> 
