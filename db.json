@@ -1,6 +1,5 @@
 {
   "users": [
-    
     {
       "name": "rato",
       "surname": "manbfh",
@@ -13,6 +12,7 @@
     {
       "name": "dd",
       "surname": "dg",
+      "id"
       "email": "",
       "phone": "",
       "position": "",
@@ -24,9 +24,18 @@
       "surname": "dgdg",
       "email": "gd@h",
       "phone": "dg",
-      "position": "",
-      "image": "",
+      "position": "Teacher",
+      "image": "C:\\fakepath\\ERROR CODE.png",
       "id": 3
+    },
+    {
+      "name": "",
+      "surname": "",
+      "email": "",
+      "phone": "",
+      "position": "",
+      "image": "C:\\fakepath\\ERROR CODE.png",
+      "id": 4
     }
   ]
 }

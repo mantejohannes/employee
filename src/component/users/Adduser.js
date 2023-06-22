@@ -120,6 +120,16 @@ const Adduser = () =>{
          />
 
         </div>
+
+        <div className='form-group'>
+          <input
+           type='file'
+           name='image'
+           value={image}
+           onChange={e => onInputChange(e)}
+
+         />
+        </div>
         
         <br></br>
 
